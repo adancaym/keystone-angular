@@ -1,0 +1,39 @@
+<div class="container">
+	<h1>
+		Products
+	</h1>
+	
+	<div class="row">
+		{{# each products}}
+			<div class="col-lg-4 col-md-4">
+                <div class="card" >
+                    <h5 class="card-title text-center">
+						<b>
+							{{title}}		
+						</b>
+					</h5>
+					{{#if image}}
+                        <img src="{{{cloudinaryUrl image crop="fit" }}}" width="100%" class="thumbnail img-responsive">
+					{{/if}}                    
+					<div class="card-body">
+                        <p class="card-text">{{{description}}}</p>
+                        <div class="card-footer">
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-danger">
+                                    Categories
+                                </li>
+								{{# each categories}}
+                                    <li class="list-group-item">
+										{{name}}
+                                    </li>
+								{{/each}}
+                            </ul>
+                        </div>
+                        <a href="{{productUrl slug}}" class="btn btn-primary">ver más</a>
+                    </div>
+					
+                </div>
+			</div>
+		{{/each}}
+	</div>
+</div>

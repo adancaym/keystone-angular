@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+            <div class="card">
+                <div class="card-title">
+					<h1 class="text-center">
+						{{ data.products.title }}	
+					</h1>
+                </div>
+				<div class="card-body">
+					<div class="col-md-6" >
+                        <div class="well" style="height: 300px !important;">
+                            <div class="card-content">
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <strong>Description: </strong> {{{data.products.description}}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Price: </strong> ${{{data.products.price}}}
+                                    </li>
+                                    <li class="list-group-item">
+                                        <strong>Qty: </strong>{{{data.products.qty}}}
+                                    </li>
+									<li class="list-group-item">
+										<strong>
+                                            Categories:
+										</strong>
+									<ul>
+										{{#each data.products.categories}}
+                                            <li>
+												{{name}}
+                                            </li>
+										{{/each}}
+									</ul>
+									
+									</li>
+                                    <li class="list-group-item">
+                                        <a href="/products">Go back to products!</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+					</div>
+					<div class="col-md-6" >
+						<div class="well" style="height: 300px !important;">
+							{{#if data.products.image}}
+                                <img src="{{{cloudinaryUrl data.products.image crop="fit" }}}" alt="" class="img-responsive">
+							{{/if}}	
+						</div>
+					</div>
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
