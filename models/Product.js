@@ -11,8 +11,8 @@ var Product = new keystone.List('Product', {
 
 Product.add({
 	title: { type: String, required: true },
+	code: { type: String },
 	price: { type: Number },
-	qty: { type: Number },
 	description: { type: TypeFields.Html, wysiwyg: true, height: 300 },
 	image: { type: TypeFields.CloudinaryImage },
 	publishedDate: { type: Date, default: Date.now() },

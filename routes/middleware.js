@@ -63,7 +63,7 @@ exports.registerApi = (app, name, controller) => {
 	// get a product by the id field
 	app.get('/api/' + name + '/:id', controller.get);
 	// post a product and create it in the database
-	app.post('/api/' + name + '', controller.create);
+	app.post('/api/' + name + '/', controller.create);
 	// put and id and product this updates de database's row
 	app.put('/api/' + name + '/:id', controller.update);
 	// delete a product of the database by the id

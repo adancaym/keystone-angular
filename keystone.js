@@ -58,6 +58,7 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 	products: ['products', 'product-categories'],
+	stores: ['stores', 'racks', 'shelves', 'shelf-products'],
 });
 
 keystone.set('cors allow origin', true);

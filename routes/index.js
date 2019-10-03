@@ -55,9 +55,12 @@ exports = module.exports = function (app) {
 
 	app.all('/api*', keystone.middleware.cors);
 
-	app = middleware.registerApi(app, 'products', routes.api.productRest.controller);
+	app = middleware.registerApi(app, 'products', routes.api.productRest);
 
-	app = middleware.registerApi(app, 'posts', routes.api.postRest.controller);
+	app = middleware.registerApi(app, 'posts', routes.api.postRest);
+	app = middleware.registerApi(app, 'stores', routes.api.storeRest);
+	app = middleware.registerApi(app, 'racks', routes.api.rackRest);
+	app = middleware.registerApi(app, 'shelves', routes.api.shelfRest);
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
